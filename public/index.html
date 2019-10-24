@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Raiz Cuadrada</title>
+<!-- Ícono para la página web. -->
+<link rel="icon" sizes="32x32" href="favicon.ico">
+<!-- Color de la barra de navegación de Chrome. -->
+<meta name="theme-color" content="#ffcb2d">
+<!-- Configuración de la Web App Chrome y Microsoft Store. -->
+<link rel="manifest" href="manifest.json">
+<!-- Configuración para del acceso directo en Windows Edge/IE -->
+<!-- Icono -->
+<meta name="msapplication-TileImage" content="img/firebase.png">
+<!-- Color de tile. -->
+<meta name="msapplication-TileColor" content="#4fc3f7">
+<!-- Configuración para Web Clip en Safari. -->
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" sizes="452x452" href="img/firebase.png">
+<link rel="apple-touch-startup-image" sizes="452x452"
+href="img/firebase.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/estilos.css" rel="stylesheet">
+<!-- update the version number as needed -->
+<script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+<!-- include only the Firebase features as you need -->
+<script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+<script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+<script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+<script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+<!-- initialize the SDK after all desired features are loaded -->
+<script defer src="/__/firebase/init.js"></script>
+
+<script type="text/javascript">
+  function calcular() {
+      document.getElementById("formulario");
+      var raiz = formulario.valor.value;
+      raiz = (Math.sqrt(raiz));
+      var resultado=raiz;
+      formulario.resultado.value=resultado;
+  }
+</script>
+</head>
+<body>
+    <h1>Raiz cuadrada</h1> 
+    <br>
+    <br>
+    <br>
+<form id="formulario">
+    Numero:<br><input type="number"min="0" name="valor" placeholder="Introduce un numero"/>
+    <br>
+    <br>
+    <input type="button" value="Calcular raiz" onclick="calcular();"/>
+    <br>
+    <br>
+    Resultado:<br><input type="text" name="resultado"  disabled/>
+    
+</form>
+<script>
+/* Registra un service worker para instalar la aplicación en el
+* caché del navegador. */
+async function registraServiceWorker() {
+if ("serviceWorker" in navigator) {
+try {
+const registro = await navigator.serviceWorker.register("sw.js");
+console.log("Service Worker registrado.");
+console.log(registro);
+} catch (e) {
+console.log(e);
+}
+}
+}
+registraServiceWorker();
+document.addEventListener('DOMContentLoaded', function () {
+try {
+let app = firebase.app();
+let features = ['auth', 'database', 'messaging', 'storage']
+.filter(feature => typeof app[feature] === 'function');
+document.vista.mensaje.value =
+`Firebase SDK cargó con: ${features.join(', ')}`;
+} catch (e) {
+console.log(e);
+document.vista.mensaje.value =
+'Error cargando Firebase SDK. Revisa la consola del navegador.';
+}
+});
+</script>
+</body>
+<footer>
+    Copyright &copy; 2019 Manuel Josafeth Posadas Díaz IC51.
+</footer>
+</html>
