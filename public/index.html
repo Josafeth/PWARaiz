@@ -39,7 +39,15 @@
    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
    <!-- initialize the SDK after all desired features are loaded -->
    <script defer src="/__/firebase/init.js"></script>
-
+<script type="text/javascript">
+  function calcular() {
+      document.getElementById("formulario");
+      var raiz = formulario.valor.value;
+      raiz = (Math.sqrt(raiz));
+      var resultado=raiz;
+      formulario.resultado.value=resultado;
+  }
+</script>
  </head>
  <body>
    <form name="vista">
