@@ -46,6 +46,7 @@
       raiz = (Math.sqrt(raiz));
       var resultado=raiz;
       formulario.resultado.value=resultado;
+	  
   }
 </script>
  </head>
@@ -64,7 +65,7 @@
     <br>
     <br>
 <form id="formulario">
-    Numero:<br><input type="number"min="0" name="valor" placeholder="Introduce un numero"/>
+    Numero:<br><input type="number" name="valor" placeholder="Introduce un numero"/>
     <br>
     <br>
     <input type="button" value="Calcular raiz" onclick="calcular();"/>
@@ -91,6 +92,7 @@
          }
        }
      }
+	 
 
      registraServiceWorker();
      document.addEventListener('DOMContentLoaded', function () {
@@ -106,6 +108,12 @@
            'Error cargando Firebase SDK. Revisa la consola del navegador.';
        }
      });
+	 
+	 
+	 
    </script>
+   
+    <footer>Copyright &copy; 2019 Posadas Díaz Manuel Josafeth IC51.</footer>
+
  </body>
 </html>
