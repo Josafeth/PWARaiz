@@ -1,10 +1,10 @@
 {
-"short_name": "cfspwa",
-"name": "Ejemplo de PWA",
+"short_name": "Raiz",
+"name": "Raiz cuadrada",
 "start_url": "/index.html",
 "display": "standalone",
-"background_color": "#4fc3f7",
-"theme_color": "#ffcb2d",
+"background_color": "#00c98a",
+"theme_color": "#2dff77",
 "icons": [
 {
 "src": "img/firebase.png",
