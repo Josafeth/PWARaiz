@@ -65,7 +65,7 @@
     <br>
     <br>
 <form id="formulario">
-    Numero:<br><input type="number" name="valor" placeholder="Introduce un numero"/>
+    Numero:<br><input type="number" name="valor" min="0" oninput="validity.valid||(value='');" placeholder="Introduce un numero (no se pueden numeros negativos)"/>
     <br>
     <br>
     <input type="button" value="Calcular raiz" onclick="calcular();"/>
